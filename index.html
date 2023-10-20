@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+        .color-indicator {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+        }
+        .slider {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Sliders</h1>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: orange;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="orange-slider">
+        <span id="orange-value">0</span>
+    </div>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: yellow;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="yellow-slider">
+        <span id="yellow-value">0</span>
+    </div>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: green;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="green-slider">
+        <span id="green-value">0</span>
+    </div>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: red;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="red-slider">
+        <span id="red-value">0</span>
+    </div>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: blue;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="blue-slider">
+        <span id="blue-value">0</span>
+    </div>
+
+    <div class="slider-container">
+        <div class="color-indicator" style="background-color: purple;"></div>
+        <input class="slider" type="range" min="0" max="20" value="0" id="purple-slider">
+        <span id="purple-value">0</span>
+    </div>
+
+    <script>
+        const sliders = document.querySelectorAll('.slider');
+        const valueElements = document.querySelectorAll('span[id$="-value"]');
+
+        sliders.forEach((slider, index) => {
+            slider.addEventListener('input', (event) => {
+                const value = event.target.value;
+                valueElements[index].textContent = value;
+            });
+        });
+    </script>
+</body>
+</html>
